@@ -1,9 +1,13 @@
 package com.warehouse.model;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+
 public class Location {
 
+	@Field(name = "lat")
 	private String _lat;
 	
+	@Field(name = "long")
 	private String _long;
 	
 	public Location(String _lat,String _long) {

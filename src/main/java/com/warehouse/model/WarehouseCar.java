@@ -10,7 +10,25 @@ public class WarehouseCar {
 	private double price;
 	private String date_added;
 	private boolean licensed;
+	private double lng;
+	private double lang;
 	
+	public double getLng() {
+		return lng;
+	}
+
+	public void setLng(double lng) {
+		this.lng = lng;
+	}
+
+	public double getLang() {
+		return lang;
+	}
+
+	public void setLang(double lang) {
+		this.lang = lang;
+	}
+
 	public WarehouseCar(Warehouse w, Vehicle v) {
 		this.id = v.get_id()+"";
 		this.warehouseName = w.getName();
@@ -20,6 +38,8 @@ public class WarehouseCar {
 		this.price = v.getPrice();
 		this.date_added = v.getDate_added();
 		this.licensed = v.isLicensed();
+		this.lang = new Double(w.getLocation().get_lat());
+		this.lng = new Double(w.getLocation().get_long());
 	}
 
 	public String getId() {

@@ -31,8 +31,9 @@ public class WarehouseService {
 		for(Warehouse w: wl) {
 			for(Vehicle v : w.getCars().getVehicles()) {
 				try {
-				wlc.add(new WarehouseCar(w, v));
+					wlc.add(new WarehouseCar(w, v));
 				} catch (Exception e) {
+					e.printStackTrace();
 					System.out.println(v.get_id());
 				}
 			}
